@@ -45,7 +45,7 @@ searchButtonElement.addEventListener('click', function() {
 let weather = {
   apiKey : "20d0074fa6ed4e7689b90538230208",
   fetchWeather: function (locationName) {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${locationName}&aqi=no`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${locationName}&aqi=no`)
     .then(response => response.json())
     .then(data => this.displayWeather(data));
   },
