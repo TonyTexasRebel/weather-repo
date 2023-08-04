@@ -10,6 +10,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow-y: hidden;
+  overflow-x: hidden;
   font-size: 22px;
   flex-direction: column;
 
@@ -29,7 +30,7 @@ body {
   flex-direction: column;
   backdrop-filter: blur(6px);
   position: relative;
-  bottom: 80px;
+  bottom: 5%;
 }
 
 .search {
@@ -95,7 +96,7 @@ body {
   justify-content: center;
   flex-direction: column;
   position: relative;
-  bottom: 150px;
+  bottom: 10%;
   font-family: inherit;
   font-size: 65px;
   font-weight: bold;
@@ -125,4 +126,37 @@ body {
   width: 380px;
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-height: 700px) {
+  .local-time {
+    bottom: 6%;
+  }
+
+  .weather-container {
+    bottom: 1%;
+  }
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .local-time {
+    width: 380px;
+  }
+
+  .weather-container {
+    max-width: 300px;
+    font-size: 18px;
+    height: 380px;
+
+  }
+
+  .search {
+    width: 200px;
+    font-size: 20px;
+  }
+
+  .weather-status {
+    width: 300px;
+  }
 }

@@ -41,7 +41,7 @@ searchBarElement.addEventListener('keydown', function(event) {
 });
 
 const searchButtonElement = document.querySelector('.search-button');
-searchButtonElement.addEventListener('click', function() {
+searchButtonElement.addEventListener('click', function() {9
   let locationName = searchBarElement.value;
   weather.fetchWeather(locationName);
   searchBarElement.value = '';
