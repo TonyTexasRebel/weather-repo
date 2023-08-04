@@ -109,9 +109,20 @@ body {
 }
 
 .local-info {
-  color: rgba(37, 37, 37, 0.658);
+  color: rgba(255, 255, 255, 0.945);
   font-size: 10px;
   position: relative;
   font-weight: bold;
   bottom: 70px;
+  width: 460px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.time {
+  width: 380px;
+  display: flex;
+  justify-content: center;
 }

@@ -2,21 +2,28 @@
 const localTimeInterval = setInterval(() => {
   let localTime = new Date();
   let timeElement = document.querySelector('.time');
-  if (localTime.getHours() < 10) {
-    timeElement.innerText = `0${localTime.getHours()}:${localTime.getMinutes()}:${localTime.getSeconds()}`;
-  } else {
-    timeElement.innerText = `${localTime.getHours()}:${localTime.getMinutes()}0:${localTime.getSeconds()}`;
-  }
-  if (localTime.getMinutes() < 10) {
+
+
+
+  if (localTime.getHours() < 10 && localTime.getMinutes() < 10 && localTime.getSeconds() <10) {
+    timeElement.innerText = `0${localTime.getHours()}:0${localTime.getMinutes()}:0${localTime.getSeconds()}`;
+  } else if (localTime.getHours() < 10 && localTime.getMinutes() >= 10 && localTime.getSeconds() <10) {
+    timeElement.innerText = `0${localTime.getHours()}:${localTime.getMinutes()}:0${localTime.getSeconds()}`;
+  } else if (localTime.getHours() < 10 && localTime.getMinutes() >= 10 && localTime.getSeconds() >=10) {
+    timeElement.innerText = `0${localTime.getHours()}:${localTime.getMinutes()}:${localTime.getSeconds()}`; 
+  } else if (localTime.getHours() >= 10 && localTime.getMinutes() < 10 && localTime.getSeconds() <10) {
+    timeElement.innerText = `${localTime.getHours()}:0${localTime.getMinutes()}:0${localTime.getSeconds()}`;
+  } else if (localTime.getHours() >= 10 && localTime.getMinutes() < 10 && localTime.getSeconds() >=10) {
     timeElement.innerText = `${localTime.getHours()}:0${localTime.getMinutes()}:${localTime.getSeconds()}`;
-  } else {
-    timeElement.innerText = `${localTime.getHours()}:${localTime.getMinutes()}:${localTime.getSeconds()}`;
-  }
-  if (localTime.getSeconds() < 10) {
+  } else if (localTime.getHours() < 10 && localTime.getMinutes() < 10 && localTime.getSeconds() >=10) {
+    timeElement.innerText = `0${localTime.getHours()}:0${localTime.getMinutes()}:${localTime.getSeconds()}`;
+  } else if (localTime.getHours() >= 10 && localTime.getMinutes() >= 10 && localTime.getSeconds() <10) {
     timeElement.innerText = `${localTime.getHours()}:${localTime.getMinutes()}:0${localTime.getSeconds()}`;
-  } else {
+  } else if (localTime.getHours() >= 10 && localTime.getMinutes() >= 10 && localTime.getSeconds() >=10) {
     timeElement.innerText = `${localTime.getHours()}:${localTime.getMinutes()}:${localTime.getSeconds()}`;
   }
+
+
   timeElement.innerHTML = timeElement.innerHTML.replaceAll(":", " &#183; ");
 
 
@@ -38,7 +45,7 @@ searchButtonElement.addEventListener('click', function() {
   let locationName = searchBarElement.value;
   weather.fetchWeather(locationName);
   searchBarElement.value = '';
-  
+  document.body.style.backgroundImage = `url('https://source.unsplash.com/1920x1080/?${locationName}?night')`;
 });
 
 
